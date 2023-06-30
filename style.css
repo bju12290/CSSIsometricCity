@@ -1,3 +1,7 @@
+:root {
+  --road-color: #4d4c48;
+}
+
 body {
     position: fixed;
     width: 350px;
@@ -6,7 +10,9 @@ body {
     right: 0;
     background-color: #f4f0d8;
 }
+
 /* GROUND, ROADS, & PARK */
+
 .ground {
     position: absolute;
     display: block;
@@ -52,7 +58,7 @@ body {
 .road-1 {
     position: absolute;
     display: block;
-    background-color: #4d4c48;
+    background-color: var(--road-color);
     width: 345px;
     height: 25px;
     top: 90px;
@@ -61,7 +67,7 @@ body {
 .road-2 {
     position: absolute;
     display: block;
-    background-color: #4d4c48;
+    background-color: var(--road-color);
     width: 345px;
     height: 25px;
     top: 230px;
@@ -70,7 +76,7 @@ body {
 .road-3 {
     position: absolute;
     display: block;
-    background-color: #4d4c48;
+    background-color: var(--road-color);
     width: 25px;
     height: 350px;
     top: 0;
@@ -79,7 +85,7 @@ body {
 .road-4 {
     position: absolute;
     display: block;
-    background-color: #4d4c48;
+    background-color: var(--road-color);
     width: 25px;
     height: 350px;
     top: 0;
@@ -119,7 +125,7 @@ body {
     border-radius: 50px;
 }
 
-.road-1-dividers {
+.road-1-dividers, .road-2-dividers {
     position: absolute;
     display: block;
     border-color: #F7B500;
@@ -130,28 +136,7 @@ body {
     top: calc(50% - .5px);
 }
 
-.road-2-dividers {
-    position: absolute;
-    display: block;
-    border-color: #F7B500;
-    border-width: 1px;
-    border-style: dashed;
-    width: 340px;
-    height: 0;
-    top: calc(50% - .5px);
-}
-
-.road-3-dividers {
-    position: absolute;
-    display: block;
-    border-color: #F7B500;
-    border-width: 1px;
-    border-style: dashed;
-    width: 0;
-    height: 340px;
-    left: calc(50% - .5px);
-}
-.road-4-dividers {
+.road-3-dividers, .road-4-dividers {
     position: absolute;
     display: block;
     border-color: #F7B500;
@@ -162,48 +147,32 @@ body {
     left: calc(50% - .5px);
 }
 
-.crosswalk-1 {
-    position: absolute;
+.crosswalk {
+  position: absolute;
     display: block;
-    background-color: #4d4c48;
+    background-color: var(--road-color);
     width: 25px;
     height: 25px;
+    z-index: 1;
+}
+.crosswalk.north {
     top: 0;
     left: 55px;
-    z-index: 1;
 }
 
-.crosswalk-2 {
-    position: absolute;
-    display: block;
-    background-color: #4d4c48;
-    width: 25px;
-    height: 25px;
+.crosswalk.east {
     top: 0;
     left: 270px;
-    z-index: 1;
 }
 
-.crosswalk-3 {
-    position: absolute;
-    display: block;
-    background-color: #4d4c48;
-    width: 25px;
-    height: 25px;
+.crosswalk.west {
     top: 230px;
     left: 0;
-    z-index: 1;
 }
 
-.crosswalk-4 {
-    position: absolute;
-    display: block;
-    background-color: #4d4c48;
-    width: 25px;
-    height: 25px;
+.crosswalk.south {
     top: 230px;
     left: 0;
-    z-index: 1;
 }
 
 .fountain {
@@ -232,80 +201,58 @@ body {
     z-index: 4;
 }
 
-.tree-trunk-1 {
-    position: absolute;
-    display: block;
-    background-color: #351E10;
-    border-radius: 2px;
-    transform: rotateZ(45deg);
-    width: 20px;
-    height: 4px;
+.tree-trunk {
+  position: absolute;
+  display: block;
+  background-color: #351E10;
+  border-radius: 2px;
+  transform: rotateZ(45deg);
+  width: 20px;
+  height: 4px;
+  box-shadow: -10px -10px 0 0 #351E10,
+  10px 10px 0 0 #351E10,
+  0 20px 0 0 #351E10,
+  -10px 30px 0 0 #351E10,
+  -20px 40px 0 0 #351E10,
+  -30px 50px 0 0 #351E10;
+  z-index: 2;
+
+}
+
+.tree-trunk.one {
     top: 70%;
     left: 85%;
-    box-shadow: -10px -10px 0 0 #351E10,
-    10px 10px 0 0 #351E10,
-    0 20px 0 0 #351E10,
-    -10px 30px 0 0 #351E10,
-    -20px 40px 0 0 #351E10,
-    -30px 50px 0 0 #351E10;
-    z-index: 2;
 }
 
-.leaves-1 {
-    position: absolute;
-    display: block;
-    background-color: #3A5F0B;
-    border-radius: 10px;
-    width: 67.5px;
-    height: 37.5px;
+.tree-trunk.two {
+  top: 15%;
+  left: 30%;
+}
+
+.leaves {
+  position: absolute;
+  display: block;
+  background-color: #3A5F0B;
+  border-radius: 10px;
+  width: 67.5px;
+  height: 37.5px;
+  z-index: 4;
+  box-shadow: 1px 1px 0 0 #2a4407,
+  2px 2px 0 0 #2a4407,
+  3px 3px 0 0 #2a4407,
+  4px 4px 0 0 #2a4407,
+  5px 5px 0 0 #2a4407,
+  6px 6px 0 0 #2a4407;
+}
+
+.leaves.one {
     top: 47%;
     left: 51%;
-    z-index: 3;
-    box-shadow: 1px 1px 0 0 #2a4407,
-    2px 2px 0 0 #2a4407,
-    3px 3px 0 0 #2a4407,
-    4px 4px 0 0 #2a4407,
-    5px 5px 0 0 #2a4407,
-    6px 6px 0 0 #2a4407;
-    z-index: 999;
 }
 
-.tree-trunk-2 {
-    position: absolute;
-    display: block;
-    background-color: #351E10;
-    border-radius: 2px;
-    transform: rotateZ(45deg);
-    width: 20px;
-    height: 4px;
-    top: 15%;
-    left: 30%;
-    box-shadow: -10px -10px 0 0 #351E10,
-    10px 10px 0 0 #351E10,
-    0 20px 0 0 #351E10,
-    -10px 30px 0 0 #351E10,
-    -20px 40px 0 0 #351E10,
-    -30px 50px 0 0 #351E10;
-    z-index: 2;
-}
-
-.leaves-2 {
-    position: absolute;
-    display: block;
-    background-color: #3A5F0B;
-    border-radius: 10px;
-    width: 67.5px;
-    height: 37.5px;
+.leaves.two {
     top: -8%;
     left: -4%;
-    z-index: 3;
-    box-shadow: 1px 1px 0 0 #2a4407,
-    2px 2px 0 0 #2a4407,
-    3px 3px 0 0 #2a4407,
-    4px 4px 0 0 #2a4407,
-    5px 5px 0 0 #2a4407,
-    6px 6px 0 0 #2a4407;
-    z-index: 999;
 }
 
 .dirt-path {
@@ -321,6 +268,8 @@ body {
     left: -178%;
     z-index: 1;
 }
+
+/* BUILDING 1 */
 
 .building-1 {
     position: absolute;
@@ -465,6 +414,8 @@ body {
     left: 26px;
     transform: skewY(45deg);
   }
+
+  /* BUILDING 2 */
 
   .building-2 {
     position: absolute;
@@ -753,3 +704,45 @@ body {
     z-index: 1001;
     transform: skewX(45deg);
   }
+
+  .building-2-lot {
+    position: absolute;
+    display: block;
+    background-color: var(--road-color);
+    width: 50px;
+    height: 35px;
+    top: -30px;
+    left: -5px;
+  }
+
+  .lot-driveway {
+    position: absolute;
+    display: block;
+    background-color: var(--road-color);
+    width: 8px;
+    height: 15px;
+    top: -15px;
+    left: 20px;
+  }
+
+  .spot {
+    position: absolute;
+    display: block;
+    border-right: 1.5px solid white;
+    border-bottom: 1.5px solid white;
+    border-left: 1.5px solid white;
+    background-color: transparent;
+    width: 8px;
+    height: 15px;
+  }
+
+  .spot.one {
+    left: 40.5px;
+    top: 19px;
+  }
+
+  .spot.two {
+    left: 31.5px;
+    top: 19px;
+  }
+  /* BUILDING 3 */
