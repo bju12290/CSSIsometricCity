@@ -722,7 +722,7 @@ body {
     position: absolute;
     display: block;
     background-color: var(--road-color);
-    width: 8px;
+    width: 15px;
     height: 15px;
     top: -15px;
     left: 20px;
