@@ -773,13 +773,64 @@ body {
     }
   }
 
+  @keyframes blue-car{
+    0% {
+      opacity: 0;
+      top: 0;
+      left: 56px; 
+    }
+    1% {
+      opacity: 1;
+    }
+    5% {
+      top: 70px;
+      left: 56px;
+    }
+    24% {
+      top: 70px;
+      left: 56px;
+    }
+    34% {
+      top: 214px;
+      left: 56px;
+    }
+    41.5% {
+      top: 214px;
+      left: 56px;
+    }
+    48.5% {
+      top: 325px;
+      left: 56px;
+      opacity: 1;
+    }
+    49% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   .car-one {
-    animation: red-car 9s linear infinite;
+    animation: red-car 16s linear infinite;
     background-color: red;
     position: absolute;
     display: block;
     width: 15px;
     height: 7px;
+    top: 86px;
+    left: 200px;
+    box-shadow: 2px 2px 0 0 #111111;
+    z-index: 3;
+  }
+
+  .car-two {
+    animation: blue-car 14s linear infinite;
+    background-color: blue;
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 15px;
     top: 86px;
     left: 200px;
     box-shadow: 2px 2px 0 0 #111111;
