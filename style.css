@@ -1,5 +1,6 @@
 :root {
   --road-color: #4d4c48;
+  --car-box-shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -734,18 +735,33 @@ body {
     border-bottom: 1.5px solid white;
     border-left: 1.5px solid white;
     background-color: transparent;
-    width: 8px;
+    width: 9px;
     height: 15px;
   }
 
   .spot.one {
-    left: 40.5px;
+    left: 39px;
     top: 19px;
   }
 
   .spot.two {
-    left: 31.5px;
+    left: 29px;
     top: 19px;
+  }
+
+  .parked-car {
+    width: 7px;
+    height: 15px;
+    box-shadow: 2px 2px 0 0 var(--car-box-shadow-color);
+    z-index: 1;
+  }
+
+  .parked-car.one {
+    background-color: purple;
+  }
+
+  .parked-car.two {
+    background-color: yellow;
   }
   /* BUILDING 3 */
 
@@ -812,7 +828,7 @@ body {
   }
 
   .car-one {
-    animation: red-car 16s linear infinite;
+    animation: red-car 16s ease-in infinite;
     background-color: red;
     position: absolute;
     display: block;
@@ -820,12 +836,12 @@ body {
     height: 7px;
     top: 86px;
     left: 200px;
-    box-shadow: 2px 2px 0 0 #111111;
+    box-shadow: 2px 2px 0 0 var(--car-box-shadow-color);
     z-index: 3;
   }
 
   .car-two {
-    animation: blue-car 14s linear infinite;
+    animation: blue-car 22s ease infinite;
     background-color: blue;
     position: absolute;
     display: block;
@@ -833,6 +849,6 @@ body {
     height: 15px;
     top: 86px;
     left: 200px;
-    box-shadow: 2px 2px 0 0 #111111;
+    box-shadow: 2px 2px 0 0 var(--car-box-shadow-color);
     z-index: 3;
   }
